@@ -274,3 +274,7 @@ h1::after {
     height: 325px;
     width: auto;
 }
+
+.added-message {
+    text-align:center;
+}
