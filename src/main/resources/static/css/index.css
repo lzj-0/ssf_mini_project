@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url("/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(255, 255, 255, 0.1);
+    background-blend-mode: lighten;
+    color: #333;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    margin: 90px 0 0 0;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Lobster', cursive;
+    margin: 0;
+    color: rgb(244, 214, 42);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+    letter-spacing: 2px;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    flex-grow: 1;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Quicksand', sans-serif;
+    color: rgb(244, 214, 42);
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-image: url("../bookcover.jpg");
+    background-position: center;
+    background-size: 100% 100%;
+    padding: 0 0 0 10px;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+}
+
+span {
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: background-color 0.3s;
+    width: 220px;
+    height: 300px;
+    display: block;
+}
+
+.section span:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 20px 5px rgba(244, 214, 42, 1);
+}
+
+a:active {
+    transform: scale(0.95);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}

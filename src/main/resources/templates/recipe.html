@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Flavour Foundry - Recipe</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/community.css">
+    </head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index">Flavour Foundry</a>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="/index">Home</a>
+              <a class="nav-link active" href="/community">Community</a>
+              <a class="nav-link" href="/external">External</a>
+              <a data-th-if="${username != null}" class="nav-link" href="/moderator/reports">Reports
+                <span class="badge text-bg-info" data-th-text="${reportCount}"></span>
+              </a>
+              <form data-th-if="${username != null}" action="/moderator/logout" method="post">
+                <button type="submit" class="nav-link">Logout</button>
+              </form>
+            </div>
+          </div>
+          <div data-th-if="${username != null}" class="mod-indicator">Moderator</div>
+        </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <div class="content">
+        <div>
+            <a href="/community" class="btn btn-secondary">Back</a>
+            <a data-th-if="${username != null}" data-th-href="@{/moderator/recipe/delete/{id}(id=${recipe.id})}" class="btn btn-danger">Delete recipe</a>
+            <a data-th-if="${username != null}" data-th-href="@{/moderator/recipe/edit/{id}(id=${recipe.id})}" class="btn btn-info">Edit recipe</a>
+            <a data-th-if="${username == null}" data-th-href="@{/community/recipe/report/{id}(id=${recipe.id})}" class="btn btn-danger">Report recipe</a>
+        </div>
+
+        <div class="text-center">
+            <h2 data-th-text="${recipe.title}"></h2>
+            <p data-th-text="${recipe.summary}" class="recipesummary"></p>
+            <img data-th-if="${recipe.imageUrl == null}" data-th-src="|data:${recipe.imageType};base64,${recipe.imageData}|" alt="Image not available" class="recipe-image">
+            <img data-th-if="${recipe.imageUrl != null}" data-th-src="|/${recipe.imageUrl}|" alt="Image not available" class="recipe-image">
+        </div>
+        <br>
+        <div class="preptimediv">
+            <p data-th-text="|Preparation Time: ${recipe.readyInMinutes} min|" class="preptime"></p>
+        </div>
+
+        <div>
+            <h3>Ingredients</h3>
+            <ul data-th-each="ing, status : ${recipe.ingredients}" class="list-group">
+                <li class="list-group-item">
+                    <input class="form-check-input me-1" type="checkbox" id="|ingredient${status.index}|">
+                    <label class="form-check-label" data-th-text="${ing}" for="|ingredient${status.index}|"></label>
+                </li>
+            </ul>
+        </div>
+        <br>
+        <div>
+            <h3>Instructions</h3>
+            <div data-th-each="ins, status : ${recipe.instructions}">
+                <div class="instructions" tabindex="0">
+                    <p><strong data-th-text="|Step ${status.index + 1}|"></strong></p>
+                    <p data-th-text="${ins}"></p>
+                </div>
+            <div>
+        </div>
+
+
+    </div>
+</body>
+</html>

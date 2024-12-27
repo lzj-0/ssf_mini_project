@@ -1,0 +1,276 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url("../background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(255, 255, 255, 0.1);
+    background-blend-mode: lighten;
+    color: #333;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    width: 100%;
+    z-index: 10;
+    position: fixed;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    height: 50px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav-list li {
+    margin-right: 20px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    padding: 14px 20px;
+    display: block;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.content {
+    position: relative;
+    z-index: 3;
+    padding: 20px;
+    background-color: white;
+    width: 80%;
+    max-width: 1200px;
+    min-height: 100vh;
+    margin-top: 50px;
+}
+
+h1 {
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    font-size: 40px;
+}
+
+h2 {
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    margin: 10px;
+    font-size: 40px;
+}
+
+.recipesummary{
+    font-family: 'Quicksand', sans-serif;
+}
+
+h3 {
+    margin: 5px;
+    padding-bottom: 5px;
+    font-family: 'Quicksand', sans-serif;
+    color:rgb(230, 141, 63);
+    font-weight: 500;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 40%;
+    height: 4px;
+    background-color: #2980b9;
+    margin: 5px auto 0;
+    border-radius: 2px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search-container input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #45a049;
+}
+
+.navbar-brand {
+    color: rgb(244, 214, 42);
+    font-family: 'Lobster', cursive;
+}
+
+.nav-link {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.recipe-image {
+    width: 400px;
+    height: auto;
+}
+
+.list-group-item {
+    position: relative;
+}
+
+.instructions {
+    background-color:rgb(234, 232, 232);
+    margin:5px;
+    padding:5px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.instructions:focus {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    border-color: rgba(0, 123, 255, 0.7);
+    background-color:rgb(255, 252, 70);
+    outline: none;
+}
+
+.preptime {
+    border: 1px solid rgb(174, 127, 8);
+    display: inline-block;
+    font-size: 18px;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.preptimediv {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.community-recipes {
+    display:flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.recipe-cards {
+    display:inline-block;
+    border: 2px solid grey;
+    width:253px;
+    margin:50px;
+    box-sizing:border-box;
+    border-radius: 5px;
+}
+
+.recipe-link {
+    display:flex; 
+    flex-direction:column; 
+    align-items:center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.recipe-cards:hover {
+    border: 2px solid rgb(179, 155, 17);
+}
+
+.recipe-cardimage:hover {
+    border-bottom: 2px solid rgb(179, 155, 17);
+}
+
+.recipe-cardimage {
+    height:300px;
+    width:100%;
+    display:block;
+    border-bottom: 2px solid grey;
+    border-radius: 5px 5px 0 0;
+}
+
+.recipe-cardlabel {
+    max-width:200px;
+    padding:2px;
+    text-align:center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight:bold;
+}
+
+.search-result {
+    margin: 5px;
+    padding-bottom: 5px;
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+    font-weight: 500;
+    justify-content: center;
+    display: flex;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+.mod-indicator {
+    color:lightgrey;
+}
+
+.login-header {
+    margin: 5px;
+    padding-bottom: 5px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    color:black;
+}
+
+.error-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 15px;
+    justify-items: center;
+    flex-direction: column;
+    display: flex;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+}
+
+.error-image {
+    height: 325px;
+    width: auto;
+}
