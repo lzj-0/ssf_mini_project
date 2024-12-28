@@ -41,13 +41,13 @@ public class RecipeService {
     RestTemplate restTemplate = new RestTemplate();
 
     public List<String> parseList(String listStr, String sep, Boolean labels) throws Exception {
-        System.out.println(listStr);
+        //System.out.println(listStr);
         String[] input = listStr.split(sep);
         //System.out.println(Arrays.toString(input));
         List<String> list = new ArrayList<>();
         int i = 0;
         for (String line : input) {
-            System.out.println(line + "|||");
+            //System.out.println(line + "|||");
             if (line.equals("\n") || line.equals("\r\n") || line.equals("\r")) {
                 continue;
             }
