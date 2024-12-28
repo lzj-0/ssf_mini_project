@@ -20,4 +20,4 @@ ENV SERVER_PORT=8080
 
 EXPOSE ${SERVER_PORT}
 
-ENTRYPOINT java -jar app.jar
+ENTRYPOINT java -Duser.timezone=Asia/Singapore -jar app.jar
