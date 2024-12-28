@@ -17,22 +17,8 @@ public class RecipeRepo {
     RedisTemplate<String, String> template;
 
     public String addRecipe(Recipe recipe) {
-        // template.opsForHash().put(recipe.getId().toString(), "title", recipe.getTitle());
-        // template.opsForHash().put(recipe.getId().toString(), "ingredients", recipe.getIngredients().toString());
-        // template.opsForHash().put(recipe.getId().toString(), "readyInMinutes", recipe.getReadyInMinutes().toString());
-        // template.opsForHash().put(recipe.getId().toString(), "summary", recipe.getSummary());
-        // template.opsForHash().put(recipe.getId().toString(), "instructions", recipe.getInstructions().toString());
-        
-        // if (recipe.getImageUrl() != null) {
-        //     template.opsForHash().put(recipe.getId().toString(), "imageUrl", recipe.getImageUrl());
-        // } else if (recipe.getImageData() != null) {
-        //     template.opsForHash().put(recipe.getId().toString(), "imageData", Base64.getEncoder().encodeToString(recipe.getImageData()));
-        // }
-
         template.opsForValue().set(recipe.getId().toString(), recipe.toString());
-
         return recipe.getId().toString();
-
     }
 
     public String getRecipeById(String id) {

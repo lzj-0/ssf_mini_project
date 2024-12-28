@@ -77,8 +77,8 @@ public class ModeratorController {
     public String editRecipe(@PathVariable String id, Model model, HttpSession session) throws Exception {
         if (session.getAttribute("username") != null) {
             Recipe r = recipeService.getRecipeById(id);
-            System.out.println(moderatorService.unparseList(r.getIngredients(), "\n", false));
-            System.out.println(moderatorService.unparseList(r.getInstructions(), "\n", true));
+            //System.out.println(moderatorService.unparseList(r.getIngredients(), "\n", false));
+            //System.out.println(moderatorService.unparseList(r.getInstructions(), "\n", true));
             model.addAttribute("recipe", r);
             model.addAttribute("ingredients", moderatorService.unparseList(r.getIngredients(), "\n", false));
             model.addAttribute("instructions", moderatorService.unparseList(r.getInstructions(), "\n", true));

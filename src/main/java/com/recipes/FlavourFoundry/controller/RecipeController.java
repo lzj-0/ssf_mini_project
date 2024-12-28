@@ -13,8 +13,6 @@ import com.recipes.FlavourFoundry.service.ReportService;
 
 import jakarta.servlet.http.HttpSession;
 
-
-
 @Controller
 @RequestMapping(path = {"/", "index"})
 public class RecipeController {
@@ -36,7 +34,6 @@ public class RecipeController {
         TimeZone timeZone = TimeZone.getTimeZone("Asia/Singapore");
 
         Calendar cal = Calendar.getInstance(timeZone);
-        System.out.println(cal.get(Calendar.HOUR_OF_DAY));
         model.addAttribute("currHour", cal.get(Calendar.HOUR_OF_DAY));
         model.addAttribute("username", session.getAttribute("username"));
         model.addAttribute("reportCount", reportService.getReportCount());

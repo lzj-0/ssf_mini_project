@@ -37,7 +37,7 @@ public class ExternalRecipeController {
         TimeZone timeZone = TimeZone.getTimeZone("Asia/Singapore");
 
         Calendar cal = Calendar.getInstance(timeZone);
-        System.out.println(cal.get(Calendar.HOUR_OF_DAY));
+        //System.out.println(cal.get(Calendar.HOUR_OF_DAY));
         model.addAttribute("currHour", cal.get(Calendar.HOUR_OF_DAY));
 
         model.addAttribute("recipes", recipes);

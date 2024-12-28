@@ -48,7 +48,7 @@ public class ExternalRecipeRestController {
         System.out.println(url);
 
         ResponseEntity<String> resp = restTemplate.getForEntity(url, String.class);
-        System.out.println(resp.getBody());
+        //System.out.println(resp.getBody());
 
         return ResponseEntity.ok().body(resp.getBody());
 

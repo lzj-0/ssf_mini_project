@@ -40,20 +40,6 @@ public class RecipeService {
 
     RestTemplate restTemplate = new RestTemplate();
 
-    // public Map<String, String> parseMap(String ingredientsStr, String sepIngredient, String sepKeyVal) {
-
-    //     String[] input = ingredientsStr.split(sepIngredient);
-    //     Map<String, String> ingredients = new HashMap<>();
-    //     for (String line : input) {
-    //         String ingredient = line.split(sepKeyVal)[0].trim();
-    //         String quantityMetric = line.split(sepKeyVal)[1].trim();
-
-    //         ingredients.put(ingredient, quantityMetric);
-    //     }
-
-    //     return ingredients;
-    // }
-
     public List<String> parseList(String listStr, String sep, Boolean labels) throws Exception {
         //System.out.println(listStr);
         String[] input = listStr.split(sep);
@@ -77,8 +63,6 @@ public class RecipeService {
 
             list.add(step);
         }
-
-        //System.out.println("Success");
 
         return list;
     }

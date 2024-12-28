@@ -44,9 +44,7 @@ public class RedisConfig {
         RedisTemplate<String, String> template = new RedisTemplate<>();
         template.setConnectionFactory(jcf);
         template.setKeySerializer(new StringRedisSerializer());
-        //template.setHashKeySerializer(new StringRedisSerializer());
         template.setValueSerializer(new StringRedisSerializer());
-        //template.setHashValueSerializer(new StringRedisSerializer());
 
         return template;
     }
@@ -71,9 +69,7 @@ public class RedisConfig {
         RedisTemplate<String, String> template = new RedisTemplate<>();
         template.setConnectionFactory(jcf);
         template.setKeySerializer(new StringRedisSerializer());
-        //template.setHashKeySerializer(new StringRedisSerializer());
         template.setValueSerializer(new StringRedisSerializer());
-        //template.setHashValueSerializer(new StringRedisSerializer());
 
         return template;
     }
