@@ -24,5 +24,10 @@ Welcome to Flavour Foundry - a vibrant platform designed for food enthusiasts, h
 
 ### Moderator Features
 1. Edit Recipe
+    - edit any field of the recipe based on reports made by users
+
 2. Delete Recipe
+    - remove any inappropriate recipe or spams
+
 3. Handle Reports
+    - keep track of reports that were sent by users
