@@ -50,11 +50,15 @@
         <div class="content">
             <h1>Reports</h1>
             <br>
+            <div data-th-if="${reportCount == 0}">
+              <br>
+              <p class="message">All quiet on the culinary front! No reports to handle.🥳</p>
+            </div>
             <div class="list-group">
                 <a data-th-each="report : ${reports}" data-th-href="@{/moderator/report/{id}(id=${report.id})}" class="list-group-item list-group-item-action" aria-current="true">
                   <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1" data-th-text="${report.subject}"></h5>
-                    <small data-th-text="${#dates.format(report.date, 'dd MMM YYYY h:mm a')}"></small>
+                    <small data-th-text="${#dates.format(report.date, 'dd MMM YYYY h:mm a', 'Asia/Singapore')}"></small>
                   </div>
                   <p class="mb-1" data-th-text="${report.category}"></p>
                   <small data-th-text="${report.issue}"></small>
