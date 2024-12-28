@@ -41,22 +41,23 @@ public class RecipeService {
     RestTemplate restTemplate = new RestTemplate();
 
     public List<String> parseList(String listStr, String sep, Boolean labels) throws Exception {
-        //System.out.println(listStr);
+        System.out.println(listStr);
         String[] input = listStr.split(sep);
         //System.out.println(Arrays.toString(input));
         List<String> list = new ArrayList<>();
+        int i = 0;
         for (String line : input) {
-            
+            System.out.println(line + "|||");
             if (line.equals("\n") || line.equals("\r\n") || line.equals("\r")) {
                 continue;
             }
-
+            i++;
             String step = "";
             if (labels) {
                 if (!line.substring(0, 2).matches(".*\\d.*")) {
                     throw new Exception();
                 }
-                step = line.substring(2).trim();
+                step = (i > 9) ? line.substring(3).trim() : line.substring(2).trim();
             } else {
                 step = line;
             }
