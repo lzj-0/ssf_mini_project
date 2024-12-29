@@ -20,9 +20,9 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link" href="/index">Home</a>
-              <a class="nav-link active" href="/community">Community</a>
+              <a class="nav-link" href="/community">Community</a>
               <a class="nav-link" href="/external">External</a>
-              <a data-th-if="${username != null}" class="nav-link" href="/moderator/reports">Reports
+              <a data-th-if="${username != null}" class="nav-link active" href="/moderator/reports">Reports
                 <span class="badge text-bg-info" data-th-text="${reportCount}"></span>
               </a>
               <form data-th-if="${username != null}" action="/moderator/logout" method="post">
